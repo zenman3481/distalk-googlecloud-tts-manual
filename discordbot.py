@@ -74,12 +74,18 @@ async def join1(ctx):
                 await ctx.author.voice.channel.connect()
 
 @client.command()
+async def join2(ctx):
+
+@client.command()
 async def bye1(ctx):
     if ctx.message.guild:
         if ctx.voice_client is None:
             await ctx.send('ボイスチャンネルに接続していません。')
         else:
             await ctx.voice_client.disconnect()
+
+@client.command()
+async def bye2(ctx):
 
 @client.event
 async def on_message(message):
