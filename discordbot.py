@@ -68,10 +68,10 @@ async def 接続(ctx):
                     await ctx.send('接続済みです。')
                 else:
                     await ctx.voice_client.disconnect()
-                    await asyncio.sleep(0.5)
-                    await ctx.author.voice.channel.connect()
+                    //await asyncio.sleep(0.5)
+                    //await ctx.author.voice.channel.connect()
             else:
-                await ctx.author.voice.channel.connect()
+                //await ctx.author.voice.channel.connect()
 
 @client.command()
 async def 切断(ctx):
@@ -146,8 +146,8 @@ async def on_voice_state_update(member, before, after):
             await client.change_presence(activity=discord.Game(name=presence))
         else:
             if member.guild.voice_client is None:
-                await asyncio.sleep(0.5)
-                await after.channel.connect()
+//                await asyncio.sleep(0.5)
+//                await after.channel.connect()
             else:
                 if member.guild.voice_client.channel is after.channel:
                     text = member.name + 'さんが入室しました'
@@ -179,8 +179,8 @@ async def on_voice_state_update(member, before, after):
                 if len(member.guild.voice_client.channel.members) == 1 or member.voice.self_mute:
                     await asyncio.sleep(0.5)
                     await member.guild.voice_client.disconnect()
-                    await asyncio.sleep(0.5)
-                    await after.channel.connect()
+                    //await asyncio.sleep(0.5)
+                    //await after.channel.connect()
 
 @client.event
 async def on_command_error(ctx, error):
