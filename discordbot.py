@@ -75,6 +75,7 @@ async def join1(ctx):
 
 @client.command()
 async def join2(ctx):
+    pass
 
 @client.command()
 async def bye1(ctx):
@@ -86,6 +87,7 @@ async def bye1(ctx):
 
 @client.command()
 async def bye2(ctx):
+    pass
 
 @client.event
 async def on_message(message):
