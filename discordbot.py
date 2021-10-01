@@ -45,17 +45,17 @@ tts_client = texttospeech.TextToSpeechClient()
 @client.event
 async def on_ready():
     presence = f'{prefix}ヘルプ | 0/{len(client.guilds)}サーバー'
-    //await client.change_presence(activity=discord.Game(name=presence))
+    await client.change_presence(activity=discord.Game(name=presence))
 
 @client.event
 async def on_guild_join(guild):
     presence = f'{prefix}ヘルプ | {len(client.voice_clients)}/{len(client.guilds)}サーバー'
-    //await client.change_presence(activity=discord.Game(name=presence))
+    await client.change_presence(activity=discord.Game(name=presence))
 
 @client.event
 async def on_guild_remove(guild):
     presence = f'{prefix}ヘルプ | {len(client.voice_clients)}/{len(client.guilds)}サーバー'
-    //await client.change_presence(activity=discord.Game(name=presence))
+    await client.change_presence(activity=discord.Game(name=presence))
 
 @client.command()
 async def join1(ctx):
