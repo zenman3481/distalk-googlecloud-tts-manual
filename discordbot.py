@@ -140,7 +140,7 @@ async def on_message(message):
             while message.guild.voice_client.is_playing():
                 await asyncio.sleep(0.5)
             tts(text)
-            source = discord.FFmpegPCMAudio('/tmp/message.mp3')
+            source = discord.FFmpegPCMAudio('/tmp/message1.mp3')
             message.guild.voice_client.play(source)
         else:
             pass
@@ -177,7 +177,7 @@ async def on_voice_state_update(member, before, after):
                         while member.guild.voice_client.is_playing():
                             await asyncio.sleep(0.5)
                         tts(text)
-                        source = discord.FFmpegPCMAudio('/tmp/message.mp3')
+                        source = discord.FFmpegPCMAudio('/tmp/message1.mp3')
                         member.guild.voice_client.play(source)
     elif before.channel != after.channel:
         if member.guild.voice_client:
@@ -211,7 +211,7 @@ def tts(message):
     response = tts_client.synthesize_speech(
         input=synthesis_input, voice=voice, audio_config=audio_config
     )
-    with open('/tmp/message.mp3', 'wb') as out:
+    with open('/tmp/message1.mp3', 'wb') as out:
         out.write(response.audio_content)
 
 
